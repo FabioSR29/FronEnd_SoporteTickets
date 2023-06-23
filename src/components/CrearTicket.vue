@@ -48,9 +48,9 @@ async function api() {
   const formData = new FormData();
   formData.append('titulo', ticketData.value.titulo);
   formData.append('descripcion', ticketData.value.descripcion);
-  if(!ticketData.value.archivo_adjunto==null){
+  if(ticketData.value.archivo_adjunto!=null){
     formData.append('archivo_adjunto', ticketData.value.archivo_adjunto);
-  }
+     }
   
 
   try {

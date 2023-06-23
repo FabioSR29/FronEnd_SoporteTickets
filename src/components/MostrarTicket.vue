@@ -30,10 +30,6 @@
   
   const tickets = ref(estado.tickets);
   
- 
-  
- 
-
   function getFileName(filepath) {
   const filename = filepath.split('/').pop();
   const fileFormat = filename.split('.').pop();

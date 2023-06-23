@@ -3,9 +3,9 @@
     <div class="Titu"><span>Service Desk</span></div>
         <div class="menu">
             <ul class="main-menu">
-                <li class="active" @click="estado.cambiarC"><i class="fa fa-home"></i>Registro Tickets</li>
-                <li @click="estado.cambiarM" ><i class="fa fa-user"></i>Mis tickets</li>
-                <li ><i class="fa fa-search"></i>Perfil</li>
+                <li @click="estado.cambiarC">Registro Tickets</li>
+                <li @click="estado.cambiarM" >Mis tickets</li>
+                <li>Perfil</li>
             </ul>
         </div>
     <div class="content">    
@@ -29,7 +29,7 @@
 import CrearTicket from '@/components/CrearTicket.vue';
 import MostrarTicket from '@/components/MostrarTicket.vue'
 import { estado } from './Navegabilidad'
-import { ref } from 'vue';
+
 
 
 
@@ -63,11 +63,11 @@ body {
     height: 100vh;
     font-family: 'Lexend Deca', sans-serif;
     color: #878787;
-
     --menu-item-size: 50px;
     --green-color: #329680;
     --blue-color: #099c95;
     --dark-green-color: #175b52;
+    --blackColor: #0e0d0d;
     --white-color: #FFF;
     --gray-color: #EDEDED;
     --container-width: 700px;
@@ -103,7 +103,7 @@ body {
     margin: 1px;
     transition: 0.5s linear all;
     background: var(--green-color);
-    color: var(--dark-green-color);
+    color: var(--white-color);
     cursor: pointer;
     font-size: 16px;
     user-select: none;
@@ -132,7 +132,7 @@ body {
 
 .main-menu > li:hover:not(.active) {
     background: linear-gradient(to right, var(--green-color), var(--blue-color));
-    color: var(--white-color);
+    color: var(--blackColor);
 }
 
 .main-menu > li:active:not(.active),
@@ -146,21 +146,14 @@ body {
 }
 
 .main-menu .active {
-    color: var(--white-color);
+    color: var(--blackColor);
     background: var(--blue-color);
     cursor: default;
     text-shadow: 1px 1px 1px var(--dark-green-color);
     font-size: 18px;
 }
 
-article {
-   background: var(--gray-color);
-   padding: 1em;
-   border-radius: 0 0 5px 5px;
-   box-shadow: 5px 5px 5px #CCC;
-   position: relative;
-   z-index: -1;
-}
+
 
 h1 {
     font-size: 115%;
@@ -173,46 +166,4 @@ h1 {
 .content {
    padding: 15px 0 50px 0;
 }
-
-.submenu {
-    display: none;
-    position: absolute;
-    z-index: 10;
-    list-style: none;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    min-width: calc(3.5 * var(--menu-item-size) - 5%);
-    box-shadow: 5px 5px 5px #CCC;
-}
-
-.with-submenu {
-    position: relative;
-    display: inline-block;
-    clip-path: polygon(10% 0%, 0% 100%, 0% 500%, 95% 500%, 95% 100%, 100% 50%, 95% 0%);
-    shape-outside: polygon(10% 0%, 0% 100%, 95% 100%, 100% 50%, 95% 0%);
-}
-
-.with-submenu:hover .submenu {
-    display: block;
-}
-
-.submenu > li {
-    background: #dedede;
-    border-bottom: 1px solid var(--gray-color); 
-    color: #777;
-    padding: 1.2em 1em;
-    transition: 0.3s all linear;
-    display: block;
-    line-height: 0%;
-}
-
-.submenu > li:hover {
-    background: var(--gray-color)
-}
-
-.submenu > li:active {
-    background: var(--white-color);
-}
-
 </style>
